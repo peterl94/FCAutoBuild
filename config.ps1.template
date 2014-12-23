@@ -1,0 +1,22 @@
+# Your SourceForge account credentials
+$sfUsername = "username"
+$sfPassword = "password"
+
+# Set to the location of a libpack
+# (meaning it should not include the libpack folder itself)
+$libPackPath = "E:"
+$libPackVer = "11.0"
+
+#0 is the full FC version, 1 is the architecture, and 2 is the VC version
+$nameTemplate = "FreeCAD_{0}_{1}_dev_bin"
+$nameTemplateXP = "FreeCAD_{0}_{1}_WinXP_dev_bin"
+
+# These paths might not be correct on your computer
+$cmake = "${env:ProgramFiles(x86)}\CMake\bin\cmake.exe"
+$gitBin = "${env:ProgramFiles(x86)}\Git\bin"
+$git = "$gitBin\git.exe"
+$msbuild = "${env:ProgramFiles(x86)}\MSBuild\12.0\bin\msbuild.exe"
+$psftp = "${env:ProgramFiles(x86)}\PuTTY\psftp.exe"
+$7z = "${env:ProgramFiles}\7-Zip\7z.exe"
+
+$vsPath = "${env:ProgramFiles(x86)}\Microsoft Visual Studio "
