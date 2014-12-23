@@ -1,4 +1,5 @@
 param(
+    [switch]$runall,
     [switch]$update,
     [switch]$clean,
     [switch]$build,
