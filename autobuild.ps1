@@ -165,7 +165,7 @@ function Build($arch, $vcVersion, $buildDir, $libPack)
     } else {
         & $msbuild "$buildDir\FreeCAD_trunk.sln" /m /nologo /verbosity:minimal /p:Configuration=Release
     }
-    ExitIfError "Build was not completed"
+    ExitIfError "Build did not complete successfully"
     
     if (! (Test-Path "$buildDir\bin\QtCore4.dll")) {
         #probably means that no libs have been copied
