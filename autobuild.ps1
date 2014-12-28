@@ -211,7 +211,7 @@ function Upload($buildName, $buildDir)
     Push-Location $workDir
     
     "mkdir `"$remoteDir`"`r`nput $archive `"$remoteFile`"" | Out-File sftp_batch.txt -Encoding Ascii
-    & $psftp -b sftp_batch.txt -pw $sfPassword "$sfUsername,free-cad@frs.sourceforge.net"
+    & $psftp -be -b sftp_batch.txt -pw $sfPassword "$sfUsername,free-cad@frs.sourceforge.net"
     
     Pop-Location
 }
