@@ -158,7 +158,13 @@ function Build($arch, $vcVersion, $buildDir, $libPack)
     if ($clean) { Clean }
     Configure $arch $vcVersion $buildDir $libPack
     
-    & $msbuild "$buildDir\FreeCAD_trunk.sln" /m /nologo /verbosity:minimal /p:Configuration=Release
+    if ($vcVersion -eq "9") {
+        $platform = "Win32"
+        if ($arch -eq "x64") { $platform = "x64" }
+        & $vcbuild "$buildDir\FreeCAD_trunk.sln" /M2 /nologo "Release|$platform"
+    } else {
+        & $msbuild "$buildDir\FreeCAD_trunk.sln" /m /nologo /verbosity:minimal /p:Configuration=Release
+    }
     ExitIfError "Build was not completed"
     
     if (! (Test-Path "$buildDir\bin\QtCore4.dll")) {
