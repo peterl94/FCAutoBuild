@@ -16,6 +16,7 @@ $cmake = "${env:ProgramFiles(x86)}\CMake\bin\cmake.exe"
 $gitBin = "${env:ProgramFiles(x86)}\Git\bin"
 $git = "$gitBin\git.exe"
 $msbuild = "${env:ProgramFiles(x86)}\MSBuild\12.0\bin\msbuild.exe"
+$vcbuild = "${env:ProgramFiles(x86)}\Microsoft Visual Studio 9.0\VC\vcpackages\vcbuild.exe"
 $psftp = "${env:ProgramFiles(x86)}\PuTTY\psftp.exe"
 $7z = "${env:ProgramFiles}\7-Zip\7z.exe"
 
