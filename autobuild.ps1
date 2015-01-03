@@ -155,7 +155,7 @@ function Clean($buildDir)
 
 function Build($arch, $vcVersion, $buildDir, $libPack)
 {
-    if ($clean) { Clean }
+    if ($clean) { Clean $buildDir }
     Configure $arch $vcVersion $buildDir $libPack
     
     $platform = "Win32"
