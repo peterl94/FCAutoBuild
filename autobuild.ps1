@@ -162,6 +162,10 @@ function Build($arch, $vcVersion, $buildDir, $libPack)
     if ($arch -eq "x64") { $platform = "x64" }
     
     if ($vcVersion -eq "9") {
+        #fix for vcbuild not detecting header change
+        #http://social.msdn.microsoft.com/Forums/en/msbuild/thread/072c8832-2ecf-4739-b4e2-35cf536c7091
+        $env:Path = "$vsPath$vcVersion.0\Common7\IDE;" + $env:Path
+        
         & $vcbuild "$buildDir\FreeCAD_trunk.sln" /M2 /nologo "Release|$platform"
     } else {
         & $msbuild "$buildDir\FreeCAD_trunk.sln" /m /nologo /verbosity:minimal /p:Configuration=Release "/p:Platform=$platform"
